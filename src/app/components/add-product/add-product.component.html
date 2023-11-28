@@ -1,0 +1,13 @@
+<br><h4>Todo erstellen:</h4>
+<div class="addentryform">
+    <label for="text">Produkt:</label><br>
+    <input type="text" name="text" id="text" [(ngModel)]="shoppinglist.product"><br>
+    <label for="date">Datum:</label> <br>
+    <input type="date" name="date" id="date" [(ngModel)]="shoppinglist.date"><br>
+    <br>
+    
+    <select name="" style="visibility: hidden;" id="" [(ngModel)]="shoppinglist.isDone">
+        <option value="false"></option>
+    </select>
+    <button (click)="submit();">Zur Liste hinzufügen</button>
+</div>

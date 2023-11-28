@@ -1,0 +1,86 @@
+.table-secondary {
+    color: green($color: #000000);
+}
+
+table {
+    margin-left: 35.5%;
+    margin-top: 3%;
+    font-size: 22px;
+    border-collapse: collapse;
+    border-right:1px solid rgb(54, 46, 46) ;
+    border-bottom:1px solid rgb(54, 46, 46) ;
+
+
+    width: 25%;
+}
+img {
+    height: 10px;
+    width: 10px;
+    size: 10px;
+    max-width: 10px;
+    color: #000000;
+}
+
+th {
+    padding-left: 5px;
+    background-color: rgb(236, 236, 174);
+
+}
+
+
+th,
+td {
+    border: 1px solid rgb(54, 46, 46);
+    border-collapse: collapse;
+    padding-left: 5px;
+}
+
+.buttons {}
+
+
+.sortEntrie {
+    margin-top: 1%;
+    margin-left: 6.5%;
+    background-color: #dfebccda;
+    width: 90px;
+
+}
+
+.deleteEntry {
+    visibility: hidden;
+    margin-top: 1%;
+    margin-left: 47.6%;
+    background-color: rgba(243, 84, 44, 0.855);
+    width: 90px;
+}
+
+.isDone {
+    visibility: hidden;
+    margin-top: 1%;
+    margin-left: 2%;
+    background-color: #a4ff13da;
+    width: 90px;
+    width: 100px;
+
+}
+
+
+
+input {
+
+    padding-left: 100px;
+    width: 35px;
+    height: 18px;
+    font-size: 20px;
+    text-align: left;
+    border: 1px solid rgb(185, 185, 185);
+    border-collapse: collapse;
+    padding-left: 5px;
+}
+
+
+.text-info {
+
+    padding-left: 10px;
+
+}

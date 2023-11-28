@@ -1,0 +1,25 @@
+<!-- On tables -->
+<div>
+<table class="table-secondary">
+    <th>Produkt</th>
+    <th class="th2">Datum</th>
+    <th class="noborder">erledigt?</th>
+    <th></th>
+    <tr class="table-primary" *ngFor="let entry of shoppinglist">
+
+        <td class="">{{ entry.product}}</td>
+
+        <td class="">{{ toDate(entry.date)}}</td>
+
+        <td class="" id="entryIsDone{{entry.id}}">  {{isDoneImg(entry.isDone, entry.id)}}</td>
+
+        <input name="entrySelector" type="radio" value="{{entry.id}}" (change)="radioUpdate($event)">
+    </tr> 
+</table>
+<div class="buttons">
+<button id="deleteEntry" class="deleteEntry" (click)="deleteEntry()">Eintrag löschen</button>
+<button id="isDone" class="isDone" (click)="isDoneTrue()">Als erledigt markieren</button>
+
+</div>
+
+</div>
