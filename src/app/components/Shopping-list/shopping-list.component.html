@@ -15,7 +15,7 @@
                 </select>
             </mat-card-header>
             <div *ngFor="let item of shoppinglist" class="matcarddiv">
-                <mat-card-content *ngIf="item.weekday==SelectedWeekday">  <input type="checkbox" value="{{item.id}}" (change)="MakeButtonsVisibleOnRadioEvent($event)">
+                <mat-card-content *ngIf="item.weekday==SelectedWeekday">  <input type="checkbox" value="{{item.id}}">
 
                     {{item.product}} <div style="margin-left: 3%;" id="entryIsDone{{item.id}}">
                             {{ShowIfEntryIsDone(item.isDone, item.id)}}</div>
