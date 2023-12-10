@@ -15,6 +15,10 @@ export class ShoppingListComponent implements OnInit {
   shoppinglist!: Shoppinglist[];
   id!: number;
   imgLink!: String;
+  SelectedWeekday!: String;
+  weekdays = [
+    "Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samnstag"
+  ]
   constructor(
     private getShoppinglistService: GetServiceService,
     private deleteService: DeleteEntryService,
@@ -27,8 +31,8 @@ export class ShoppingListComponent implements OnInit {
 
     });
   }
-  toDate(toConvert: any) {
-    const weekdays = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
+  ConvertToDate(toConvert: any) {
+    const weekdays = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
 
     let ConvertDate = new Date(toConvert);
     let month = ConvertDate.getUTCMonth() + 1; //months from 1-12
@@ -48,22 +52,22 @@ export class ShoppingListComponent implements OnInit {
 
 
   }
-  isDoneImg(a: any, id: any) {
+  ShowIfEntryIsDone(a:any, id: any) {
     if (a === false) {
       document.getElementById("entryIsDone" + id)!.innerHTML = '<img style="width: 26px; margin-left: 30%" class="img" src="/assets/red.png" alt="">'
     }
     else {
-      document.getElementById("entryIsDone" + id)!.innerHTML = '<img style="width: 26px; margin-left: 30%" class="img" src="/assets/green.png" alt="">'
+      document.getElementById("entryIsDone" + id)!.innerHTML = '<img style="width: 24px; margin-left 40%" class="img" src="/assets/green.png" alt="">'
     }
 
   }
-  isDoneTrue() {
-    this.updateService.patchEntry(this.id).subscribe();
+  SetEntryToIsDone() {
+    this.updateService.SetEntryToIsDone(this.id).subscribe();
     window.location.reload();
   }
 
 
-  radioUpdate(event: any) {
+  MakeButtonsVisibleOnRadioEvent(event: any) {
     this.id = event.target.value;
     console.log(this.id)
 
@@ -78,5 +82,6 @@ export class ShoppingListComponent implements OnInit {
     window.location.reload();
 
   }
+  
 
 }

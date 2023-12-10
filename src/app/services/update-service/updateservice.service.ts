@@ -10,7 +10,7 @@ export class UpdateserviceService {
 
   constructor(private http: HttpClient) { }
 
-patchEntry(id: any): Observable<any> {
+  SetEntryToIsDone(id: any): Observable<any> {
   return this.http.put(`${this.baseUrl}/${id}`, id);
 }
 }

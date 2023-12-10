@@ -1,6 +1,6 @@
 export class Shoppinglist {
     id?: any;
     product?: String;
-    date?: Date;
+    weekday?: String;
     isDone?: boolean = false;
 }

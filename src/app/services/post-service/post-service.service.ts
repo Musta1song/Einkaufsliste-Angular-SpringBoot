@@ -13,7 +13,7 @@ export class PostServiceService {
 
 
   constructor(private http: HttpClient) { }
-  postEntry(shoppinglist: Shoppinglist): Observable<Object>{
+  postShoppinglistItem(shoppinglist: Shoppinglist): Observable<Object>{
     {
     return this.http.post<Object>(`${this.baseUrl}`,
       shoppinglist);

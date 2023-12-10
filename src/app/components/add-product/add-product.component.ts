@@ -8,14 +8,17 @@ import { PostServiceService } from '../../services/post-service/post-service.ser
   styleUrls: ['./add-product.component.scss']
 })
 export class AddProductComponent {
+  weekdays = [
+    "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samnstag"
+  ]
 
   shoppinglist: Shoppinglist = new Shoppinglist();
   constructor(private postService: PostServiceService) { }
 
-  submit() {
-    if(this.shoppinglist.date!)
-    console.log(this.shoppinglist)
-    this.postService.postEntry(this.shoppinglist).subscribe();
+  addNewProduct() {
+    if (this.shoppinglist.weekday!)
+      console.log(this.shoppinglist)
+    this.postService.postShoppinglistItem(this.shoppinglist).subscribe();
     window.location.reload();
   }
 }

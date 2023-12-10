@@ -7,6 +7,13 @@ import { ShoppingListComponent } from './components/Shopping-list/shopping-list.
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
+import { MatCardModule } from '@angular/material/card'
+import { MatIconModule } from '@angular/material/icon'
+import { MatButtonModule } from '@angular/material/button'
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +26,11 @@ import { AddProductComponent } from './components/add-product/add-product.compon
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatCardModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule
+
     
   ],
   providers: [],

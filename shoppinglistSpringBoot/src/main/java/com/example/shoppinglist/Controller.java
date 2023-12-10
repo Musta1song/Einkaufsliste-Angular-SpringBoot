@@ -35,7 +35,7 @@ public class Controller {
 
     @PostMapping(value = "newEntry", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Shoppinglist> postEntry(@RequestBody Shoppinglist entry) {
-        Shoppinglist _shoppinglist = repository.save(new Shoppinglist(entry.getProduct(), entry.getDate(), entry.getIsDone()));
+        Shoppinglist _shoppinglist = repository.save(new Shoppinglist(entry.getProduct(), entry.getWeekday(), entry.getIsDone()));
         return new ResponseEntity<>(_shoppinglist, HttpStatus.CREATED);
     }
 

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.bind.DefaultValue;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 
 @Entity
@@ -18,17 +19,17 @@ public class Shoppinglist {
     @Column(name = "product")
     private String product;
 
-    @Column(name = "date")
-    private Date date;
+    @Column(name = "weekday")
+    private String weekday;
 
     @Column(name = "isDone")
     private boolean isDone;
 
 
-    public Shoppinglist(String product,Date date, Boolean isDone) {
+    public Shoppinglist(String product,String weekday, Boolean isDone) {
         super();
         this.product = product;
-        this.date = date;
+        this.weekday = weekday;
         this.isDone = isDone;
     }
 
@@ -44,12 +45,12 @@ public class Shoppinglist {
         this.product = product;
     }
 
-    public Date getDate() {
-        return date;
+    public String getWeekday() {
+        return weekday;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setWeekday(String weekday) {
+        this.weekday = weekday;
     }
     public Boolean getIsDone(){
         return isDone;
