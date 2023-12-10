@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <body>
     <h3>Eintrag hinzufügen:</h3>
     <div class="addentryform">
@@ -21,3 +22,18 @@
         </select>
     </div>
 </body>
+=======
+<br><h4>Eintrag hinzufügen:</h4>
+<div class="addentryform">
+    <label for="text">Produkt:</label><br>
+    <input type="text" name="text" id="text" [(ngModel)]="shoppinglist.product"><br>
+    <label for="date">Datum:</label> <br>
+    <input type="date" name="date" id="date" [(ngModel)]="shoppinglist.date"><br>
+    <br>
+    
+    <select name="" style="visibility: hidden;" id="" [(ngModel)]="shoppinglist.isDone">
+        <option value="false"></option>
+    </select>
+    <button (click)="submit();">Zur Liste hinzufügen</button>
+</div>
+>>>>>>> c930fdd0a1abb803750f4fb98088b0b667f8cece
