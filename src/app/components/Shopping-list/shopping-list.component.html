@@ -5,31 +5,34 @@
         <mat-card>
             <mat-card-header>
                 <h2>Einkaufsliste</h2>
-                <select name="weekday" id="weekday" [(ngModel)]="SelectedWeekday">
-                    <option>{{weekdays[0]}}</option>
-                    <option>{{weekdays[1]}}</option>
-                    <option>{{weekdays[2]}}</option>
-                    <option>{{weekdays[3]}}</option>
-                    <option>{{weekdays[4]}}</option>
-                    <option>{{weekdays[5]}}</option>
-                </select>
+                    <mat-label>Wochentage: </mat-label>
+                    <select matNativeControl required name="weekday" id="weekday" [(ngModel)]="SelectedWeekday">
+                        <option>{{weekdays[0]}}</option>
+                        <option>{{weekdays[1]}}</option>
+                        <option>{{weekdays[2]}}</option>
+                        <option>{{weekdays[3]}}</option>
+                        <option>{{weekdays[4]}}</option>
+                        <option>{{weekdays[5]}}</option>
+                    </select>
             </mat-card-header>
             <div *ngFor="let item of shoppinglist" class="matcarddiv">
-                <mat-card-content *ngIf="item.weekday==SelectedWeekday">  <input type="checkbox" value="{{item.id}}">
+                <mat-card-content *ngIf="item.weekday==SelectedWeekday"> <input type="checkbox" value="{{item.id}}"
+                        (change)="MakeButtonsVisibleOnRadioEvent($event)">
 
                     {{item.product}} <div style="margin-left: 3%;" id="entryIsDone{{item.id}}">
-                            {{ShowIfEntryIsDone(item.isDone, item.id)}}</div>
+                        {{ShowIfEntryIsDone(item.isDone, item.id)}}</div>
                 </mat-card-content>
             </div>
-            <mat-card-footer> <button mat-mini-fab color="green" id="matbt" class="MatIconDoneBt" title="als erlerdigt markieren"
-                (click)="SetEntryToIsDone()">
-                <mat-icon>done</mat-icon>
-              </button>
-              <button mat-mini-fab color="green" id="matbt" class="MatIconDeleteBt" title="Todo löschen" (click)="deleteEntry()">
-                <mat-icon>delete</mat-icon>
-              </button></mat-card-footer>
+            <mat-card-footer> <button mat-mini-fab color="green" id="matbt" class="MatIconDoneBt"
+                    title="als erlerdigt markieren" (click)="SetEntryToIsDone()">
+                    <mat-icon>done</mat-icon>
+                </button>
+                <button mat-mini-fab color="green" id="matbt" class="MatIconDeleteBt" title="Todo löschen"
+                    (click)="deleteEntry()">
+                    <mat-icon>delete</mat-icon>
+                </button></mat-card-footer>
         </mat-card>
-        
+
     </body>
 
 

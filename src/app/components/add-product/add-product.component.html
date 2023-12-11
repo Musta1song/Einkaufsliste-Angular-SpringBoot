@@ -1,19 +1,26 @@
+<div class="maindiv">
 <body>
     <h3>Eintrag hinzufügen:</h3>
+
     <div class="addentryform">
+
         <label for="text">Produkt:</label><br>
         <input type="text" name="text" id="text" [(ngModel)]="shoppinglist.product"><br>
-        <label for="date">Wochentag:</label> <br>
-        <div style="display: flex;">
-            <select name="weekday" id="weekday" [(ngModel)]="shoppinglist.weekday">
-                <option>{{weekdays[0]}}</option>
-                <option>{{weekdays[1]}}</option>
-                <option>{{weekdays[2]}}</option>
-                <option>{{weekdays[3]}}</option>
-                <option>{{weekdays[4]}}</option>
-                <option>{{weekdays[5]}}</option>
-            </select> <button (click)="addNewProduct();"><mat-icon>add_shopping_cart</mat-icon> </button>
-        </div>
+
+        <mat-label>Wochentag:</mat-label>
+
+        <select [(ngModel)]="shoppinglist.weekday" name="weekday">
+            <option>{{weekdays[0]}}</option>
+            <option>{{weekdays[1]}}</option>
+            <option>{{weekdays[2]}}</option>
+            <option>{{weekdays[3]}}</option>
+            <option>{{weekdays[4]}}</option>
+            <option>{{weekdays[5]}}</option>
+        </select>
+        <br>
+
+        <button (click)="addNewProduct();"><mat-icon>add_shopping_cart</mat-icon> </button>
+
 
         <br>
         <select name="" style="visibility: hidden;" id="" [(ngModel)]="shoppinglist.isDone">
@@ -21,3 +28,4 @@
         </select>
     </div>
 </body>
+</div>

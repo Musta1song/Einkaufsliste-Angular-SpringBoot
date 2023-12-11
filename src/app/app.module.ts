@@ -9,7 +9,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { MatCardModule } from '@angular/material/card'
 import { MatIconModule } from '@angular/material/icon'
+import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatButtonModule } from '@angular/material/button'
+import { MatSelectModule } from '@angular/material/select'
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -26,6 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatSelectModule,
+    MatFormFieldModule,
     MatCardModule,
     BrowserAnimationsModule,
     MatButtonModule,

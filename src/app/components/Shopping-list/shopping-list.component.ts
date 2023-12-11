@@ -14,9 +14,10 @@ export class ShoppingListComponent implements OnInit {
 
   shoppinglist!: Shoppinglist[];
   id!: number;
+  imgLink!: String;
   SelectedWeekday!: String;
   weekdays = [
-    "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samnstag"
+    "Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samnstag"
   ]
   constructor(
     private getShoppinglistService: GetServiceService,
@@ -30,9 +31,28 @@ export class ShoppingListComponent implements OnInit {
 
     });
   }
+  ConvertToDate(toConvert: any) {
+    const weekdays = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
+
+    let ConvertDate = new Date(toConvert);
+    let month = ConvertDate.getUTCMonth() + 1; //months from 1-12
+    let day = ConvertDate.getUTCDate();
+    let weekday = ConvertDate.getDay();
+    if(day < 10){
+      let dayzero = "0" + day
+      let output = dayzero + "." + month  + "  " + weekdays[weekday] ;
+      return output
+    }
+    else{
+    let output = day + "." + month + "  " +  weekdays[weekday];
+    return output;
+    }
 
 
-  ShowIfEntryIsDone(a: any, id: any) {
+
+
+  }
+  ShowIfEntryIsDone(a:any, id: any) {
     if (a === false) {
       document.getElementById("entryIsDone" + id)!.innerHTML = '<img style="width: 26px; margin-left: 30%" class="img" src="/assets/red.png" alt="">'
     }
@@ -46,10 +66,22 @@ export class ShoppingListComponent implements OnInit {
     window.location.reload();
   }
 
+
+  MakeButtonsVisibleOnRadioEvent(event: any) {
+    this.id = event.target.value;
+    console.log(this.id)
+
+    document.getElementById("deleteEntry")!.style.visibility = "visible";
+    document.getElementById("isDone")!.style.visibility = "visible";
+
+  }
+
+
   deleteEntry() {
     this.deleteService.deleteEntry(this.id).subscribe();
     window.location.reload();
 
   }
+  
 
 }
