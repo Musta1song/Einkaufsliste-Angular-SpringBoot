@@ -1,15 +1,16 @@
 
-
+h3{
+    font-size: 18px;
+}
 select{
     height: 32px;
     margin-left: 2px;
 
 }
 
-
 mat-card{
     width: 600px;
-    margin-left: 400px;
+    margin-left: 650px;
     margin-top: 2%;
 }
 mat-label{
@@ -36,9 +37,9 @@ button{
     background-color: lightgreen;
 }
 .MatIconDeleteBt{
-    margin-left: 85%;
     background-color: rgb(238, 144, 144);
 }
+
 
 
 
