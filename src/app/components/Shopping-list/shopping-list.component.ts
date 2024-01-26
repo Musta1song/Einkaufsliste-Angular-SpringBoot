@@ -15,10 +15,11 @@ export class ShoppingListComponent implements OnInit {
   shoppinglist!: Shoppinglist[];
   id!: number;
   imgLink!: String;
-  SelectedWeekday!: String;
   weekdays = [
-    "Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samnstag"
+   "Sonntag", "Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"
   ]
+  SelectedWeekday: String = this.weekdays[this.getTodaysWeekday()];
+
   constructor(
     private getShoppinglistService: GetServiceService,
     private deleteService: DeleteEntryService,
@@ -28,28 +29,9 @@ export class ShoppingListComponent implements OnInit {
     this.getShoppinglistService.getShoppinglist().subscribe((data: Shoppinglist[]) => {
       console.log(data);
       this.shoppinglist = data;
+      this.getTodaysWeekday();
 
     });
-  }
-  ConvertToDate(toConvert: any) {
-    const weekdays = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
-
-    let ConvertDate = new Date(toConvert);
-    let month = ConvertDate.getUTCMonth() + 1; //months from 1-12
-    let day = ConvertDate.getUTCDate();
-    let weekday = ConvertDate.getDay();
-    if(day < 10){
-      let dayzero = "0" + day
-      let output = dayzero + "." + month  + "  " + weekdays[weekday] ;
-      return output
-    }
-    else{
-    let output = day + "." + month + "  " +  weekdays[weekday];
-    return output;
-    }
-
-
-
 
   }
   ShowIfEntryIsDone(a:any, id: any) {
@@ -81,6 +63,12 @@ export class ShoppingListComponent implements OnInit {
     this.deleteService.deleteEntry(this.id).subscribe();
     window.location.reload();
 
+  }
+  getTodaysWeekday(){
+    var d=new Date();
+    console.log(d.getDay());
+    return d.getDay()
+    
   }
   
 
