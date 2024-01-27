@@ -49,12 +49,10 @@ export class ShoppingListComponent implements OnInit {
   }
 
 
-  MakeButtonsVisibleOnRadioEvent(event: any) {
+  RadioEvent(event: any) {
     this.id = event.target.value;
     console.log(this.id)
 
-    document.getElementById("deleteEntry")!.style.visibility = "visible";
-    document.getElementById("isDone")!.style.visibility = "visible";
 
   }
 

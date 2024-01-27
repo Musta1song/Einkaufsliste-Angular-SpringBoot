@@ -1,33 +1,25 @@
 <div class="maindiv">
-<body>
-    <h3>Eintrag hinzufügen:</h3>
 
-    <div class="addentryform">
+    <body>
+        <div class="mat-form-field">
+            <div class="mat-form-field">
 
-        <label for="text">Produkt:</label><br>
-        <input type="text" name="text" id="text" [(ngModel)]="shoppinglist.product"><br>
+                <h3>Eintrag hinzufügen:</h3>
+                <mat-form-field>
+                    <mat-label for="text">Produkt:</mat-label>
+                    <input matInput type="text" name="text" id="text" [(ngModel)]="shoppinglist.product">
+                </mat-form-field><br>
+                <mat-form-field>
+                    <mat-label>Wochentag:</mat-label>
+                    <mat-select [(ngModel)]="shoppinglist.weekday" name="weekday">
+                        <mat-option *ngFor="let day of weekdays"  [value]="day">{{day}}</mat-option>
+                   
+                    </mat-select>
+                </mat-form-field><br>
+                
 
-        <mat-label>Wochentag:</mat-label>
-
-        <select [(ngModel)]="shoppinglist.weekday" name="weekday">
-            <option>{{weekdays[1]}}</option>
-            <option>{{weekdays[2]}}</option>
-            <option>{{weekdays[3]}}</option>
-            <option>{{weekdays[4]}}</option>
-            <option>{{weekdays[5]}}</option>
-            <option>{{weekdays[6]}}</option>
-            <option>{{weekdays[0]}}</option>
-
-        </select>
-        <br>
-
-        <button (click)="addNewProduct();"><mat-icon>add_shopping_cart</mat-icon> </button>
-
-
-        <br>
-        <select name="" style="visibility: hidden;" id="" [(ngModel)]="shoppinglist.isDone">
-            <option value="false"></option>
-        </select>
-    </div>
-</body>
+                <button mat-button (click)="addNewProduct();">Fertig<mat-icon>add_shopping_cart</mat-icon> </button>
+            </div>
+        </div>
+    </body>
 </div>

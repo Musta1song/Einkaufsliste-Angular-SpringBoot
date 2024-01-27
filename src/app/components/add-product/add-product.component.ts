@@ -16,6 +16,7 @@ export class AddProductComponent {
 
   addNewProduct() {
     if (this.shoppinglist.weekday!)
+    this.shoppinglist.isDone= false
       console.log(this.shoppinglist)
     this.postService.postShoppinglistItem(this.shoppinglist).subscribe();
     window.location.reload();

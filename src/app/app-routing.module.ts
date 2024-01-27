@@ -8,7 +8,7 @@ const routes: Routes = [
     component: ShoppingListComponent
   },
   {
-    path: 'addtodo',
+    path: 'neuerEintrag',
     component: AddProductComponent
   }
 ];

@@ -5,7 +5,7 @@
         <mat-card>
             <mat-card-header>
                 <h2>Einkaufsliste</h2>
-                    <mat-label>Wochentage: </mat-label>
+                    <mat-label>Wochentag: </mat-label>
                     <select matNativeControl required name="weekday" id="weekday" [(ngModel)]="SelectedWeekday">
                         <option>{{weekdays[1]}}</option>
                         <option>{{weekdays[2]}}</option>
@@ -19,7 +19,7 @@
             </mat-card-header>
             <div *ngFor="let item of shoppinglist" class="matcarddiv">
                 <mat-card-content *ngIf="item.weekday==SelectedWeekday"> <input type="checkbox" value="{{item.id}}"
-                        (change)="MakeButtonsVisibleOnRadioEvent($event)">
+                        (change)="RadioEvent($event)">
 
                     {{item.product}} <div style="margin-left: 3%;" id="entryIsDone{{item.id}}">
                         {{ShowIfEntryIsDone(item.isDone, item.id)}}</div>

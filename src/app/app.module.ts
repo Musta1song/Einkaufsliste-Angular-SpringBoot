@@ -12,9 +12,8 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatButtonModule } from '@angular/material/button'
 import { MatSelectModule } from '@angular/material/select'
-
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -33,8 +32,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatFormFieldModule,
     MatCardModule,
     BrowserAnimationsModule,
+    MatIconModule,
+    MatSelectModule,
     MatButtonModule,
-    MatIconModule
+    MatInputModule
 
     
   ],
