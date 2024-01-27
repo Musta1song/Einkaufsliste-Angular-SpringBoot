@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Shoppinglist } from '../../Shoppinglist';
-import { PostServiceService } from '../../services/post-service/post-service.service';
+import { PostService } from '../../services/post-service/post-service.service';
 
 @Component({
   selector: 'app-add-product',
@@ -12,7 +12,7 @@ export class AddProductComponent {
    "Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"
   ]
   shoppinglist: Shoppinglist = new Shoppinglist();
-  constructor(private postService: PostServiceService) { }
+  constructor(private postService: PostService) { }
 
   addNewProduct() {
     if (this.shoppinglist.weekday!)

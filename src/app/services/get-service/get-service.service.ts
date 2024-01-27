@@ -8,7 +8,7 @@ import { Shoppinglist } from '../../Shoppinglist';
 @Injectable({
   providedIn: 'root'
 })
-export class GetServiceService {
+export class GetService {
   private baseUrl = "http://localhost:8080/api/shoppinglist";
 
 

@@ -1,5 +1,4 @@
-
-button{
+button {
     height: 40px;
     width: 100px;
     margin-top: 10px;
@@ -8,28 +7,25 @@ button{
     background-color: rgb(248, 232, 0);
 }
 
-
-
-.mat-form-field{
+.mat-form-field {
     display: block;
 }
-mat-label{
+
+mat-label {
     color: black;
 }
 
-mat-icon{
+mat-icon {
     font-size: 25px;
 }
 
-
 h3 {
-    
     color: rgb(40, 59, 4);
     font-size: 23px;
 }
-body{
+
+body {
     display: flex;
     justify-content: center;
-    
-}
 
+}

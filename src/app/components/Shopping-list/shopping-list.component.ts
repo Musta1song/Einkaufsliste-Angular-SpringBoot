@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Shoppinglist } from '../../Shoppinglist';
-import { GetServiceService } from '../../services/get-service/get-service.service';
-import { UpdateserviceService } from '../../services/update-service/updateservice.service';
+import { GetService } from '../../services/get-service/get-service.service';
+import { UpdateService } from '../../services/update-service/update.service';
 import { DeleteEntryService } from '../../services/delete-entry/delete-entry.service';
-import { WeekDay } from '@angular/common';
 
 @Component({
   selector: 'app-shopping-list',
@@ -14,19 +13,18 @@ export class ShoppingListComponent implements OnInit {
 
   shoppinglist!: Shoppinglist[];
   id!: number;
-  imgLink!: String;
   weekdays = [
    "Sonntag", "Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"
   ]
   SelectedWeekday: String = this.weekdays[this.getTodaysWeekday()];
 
   constructor(
-    private getShoppinglistService: GetServiceService,
+    private getService: GetService,
     private deleteService: DeleteEntryService,
-    private updateService: UpdateserviceService) { }
+    private updateService: UpdateService) { }
 
   ngOnInit(): void {
-    this.getShoppinglistService.getShoppinglist().subscribe((data: Shoppinglist[]) => {
+    this.getService.getShoppinglist().subscribe((data: Shoppinglist[]) => {
       console.log(data);
       this.shoppinglist = data;
       this.getTodaysWeekday();
@@ -52,8 +50,6 @@ export class ShoppingListComponent implements OnInit {
   RadioEvent(event: any) {
     this.id = event.target.value;
     console.log(this.id)
-
-
   }
 
 

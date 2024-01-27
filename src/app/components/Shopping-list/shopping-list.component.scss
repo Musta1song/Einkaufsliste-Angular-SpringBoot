@@ -1,86 +1,52 @@
-
-h3{
+h3 {
     font-size: 18px;
 }
-select{
+
+select {
     height: 32px;
     margin-left: 2px;
-
 }
 
-mat-card{
+mat-card {
     width: 600px;
     margin-left: 650px;
     margin-top: 2%;
 }
-mat-label{
+
+mat-label {
     font-size: 18px;
     margin-left: 220px;
 }
 
-mat-card-header{
+mat-card-header {
     background-color: yellow;
 }
-mat-card-content{
+
+mat-card-content {
     display: flex;
     border-bottom: 1px solid;
 }
-mat-card-footer{
+
+mat-card-footer {
     background-color: lightgray;
     text-align: left;
 }
-button{
+
+button {
     margin-left: 5px;
-    
 }
-.MatIconDoneBt{
+
+.MatIconDoneBt {
     background-color: lightgreen;
 }
-.MatIconDeleteBt{
+
+.MatIconDeleteBt {
     background-color: rgb(238, 144, 144);
 }
 
-
-
-
-.sortEntrie {
-    margin-top: 1%;
-    margin-left: 6.5%;
-    background-color: #dfebccda;
-    width: 90px;
-
-}
-
-.deleteEntry {
-    visibility: hidden;
-    margin-top: 1%;
-    margin-left: 47.6%;
-    background-color: rgba(243, 84, 44, 0.855);
-    width: 90px;
-}
-
-.isDone {
-    visibility: hidden;
-    margin-top: 1%;
-    margin-left: 2%;
-    background-color: #a4ff13da;
-    width: 90px;
-    width: 100px;
-
-}
-
-
 input {
-
     width: 35px;
     height: 18px;
     font-size: 20px;
     border: 1px solid rgb(185, 185, 185);
-}
-
-
-.text-info {
-
-    padding-left: 10px;
-
 }

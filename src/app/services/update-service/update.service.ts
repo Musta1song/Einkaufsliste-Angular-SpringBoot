@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class UpdateserviceService {
+export class UpdateService {
 
   private baseUrl = "http://localhost:8080/api/shoppinglist/patch";
 
