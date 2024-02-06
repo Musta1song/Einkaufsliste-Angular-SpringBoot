@@ -43,9 +43,13 @@ export class ShoppingListComponent implements OnInit {
   }
   SetEntryToIsDone() {
     this.updateService.SetEntryToIsDone(this.id).subscribe();
-    window.location.reload();
-  }
+    setTimeout(this.reload, 500
 
+      ) 
+  }  
+  reload(){
+    window.location.reload()
+  }
 
   RadioEvent(event: any) {
     this.id = event.target.value;
@@ -55,8 +59,9 @@ export class ShoppingListComponent implements OnInit {
 
   deleteEntry() {
     this.deleteService.deleteEntry(this.id).subscribe();
-    window.location.reload();
+    setTimeout(this.reload, 500
 
+      ) 
   }
   getTodaysWeekday(){
     var d=new Date();
