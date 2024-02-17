@@ -19,12 +19,12 @@ mat-label {
 }
 
 mat-card-header {
-    background-color: yellow;
+    background-color: rgb(255, 255, 0);
 }
 
 mat-card-content {
     display: flex;
-    border-bottom: 1px solid;
+    border: 1px solid;
 }
 
 mat-card-footer {
