@@ -9,8 +9,12 @@ select {
 
 mat-card {
     width: 600px;
-    margin-left: 650px;
     margin-top: 2%;
+}
+
+.body{
+    display: flex;
+    justify-content: center;
 }
 
 mat-label {
@@ -25,6 +29,7 @@ mat-card-header {
 mat-card-content {
     display: flex;
     border: 1px solid;
+    width: 100%;
 }
 
 mat-card-footer {

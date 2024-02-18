@@ -34,10 +34,10 @@ export class ShoppingListComponent implements OnInit {
   }
   ShowIfEntryIsDone(a:any, id: any) {
     if (a === false) {
-      document.getElementById("entryIsDone" + id)!.innerHTML = '<img style="width: 26px; margin-left: 30%" class="img" src="/assets/red.png" alt="">'
+      document.getElementById("entryIsDone" + id)!.innerHTML = '<img style="width: 26px; float: right" class="img" src="/assets/red.png" alt="">'
     }
     else {
-      document.getElementById("entryIsDone" + id)!.innerHTML = '<img style="width: 24px; margin-left 40%" class="img" src="/assets/green.png" alt="">'
+      document.getElementById("entryIsDone" + id)!.innerHTML = '<img style="width: 24px; float: right" class="img" src="/assets/green.png" alt="">'
     }
 
   }

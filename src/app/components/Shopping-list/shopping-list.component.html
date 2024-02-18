@@ -1,5 +1,4 @@
-<body>
-    <mat-card>
+   <div class="body"><mat-card>
         <mat-card-header>
             <h2>Einkaufsliste</h2>
             <mat-label>Wochentag: </mat-label>
@@ -17,7 +16,7 @@
             <mat-card-content *ngIf="item.weekday==SelectedWeekday"> <input type="checkbox" value="{{item.id}}"
                     (change)="RadioEvent($event)">
 
-                {{item.product}} <div style="margin-left: 3%;" id="entryIsDone{{item.id}}">
+                {{item.product}} <div style="width: 100%;" id="entryIsDone{{item.id}}">
                     {{ShowIfEntryIsDone(item.isDone, item.id)}}</div>
             </mat-card-content>
         </div>
@@ -31,4 +30,4 @@
             </button></mat-card-footer>
     </mat-card>
 
-</body>
+</div> 

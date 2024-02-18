@@ -1,19 +1,18 @@
+<div class="body">
+    <div class="mat-form-field">
 
-    <body>
-        <div class="mat-form-field">
+        <h3>Eintrag hinzufügen:</h3>
+        <mat-form-field>
+            <mat-label for="text">Produkt:</mat-label>
+            <input matInput type="text" name="text" id="text" [(ngModel)]="shoppinglist.product">
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Wochentag:</mat-label>
+            <mat-select [(ngModel)]="shoppinglist.weekday" name="weekday">
+                <mat-option *ngFor="let day of weekdays" [value]="day">{{day}}</mat-option>
 
-                <h3>Eintrag hinzufügen:</h3>
-                <mat-form-field>
-                    <mat-label for="text">Produkt:</mat-label>
-                    <input matInput type="text" name="text" id="text" [(ngModel)]="shoppinglist.product">
-                </mat-form-field><br>
-                <mat-form-field>
-                    <mat-label>Wochentag:</mat-label>
-                    <mat-select [(ngModel)]="shoppinglist.weekday" name="weekday">
-                        <mat-option *ngFor="let day of weekdays"  [value]="day">{{day}}</mat-option>
-                   
-                    </mat-select>
-                </mat-form-field><br>
-                <button mat-button (click)="addNewProduct();">Fertig<mat-icon>add_shopping_cart</mat-icon> </button>
-        </div>
-    </body>
+            </mat-select>
+        </mat-form-field><br>
+        <button mat-button (click)="addNewProduct();">Fertig<mat-icon>add_shopping_cart</mat-icon> </button>
+    </div>
+</div>
