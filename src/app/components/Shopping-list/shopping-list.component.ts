@@ -14,7 +14,7 @@ export class ShoppingListComponent implements OnInit {
   shoppinglist!: Shoppinglist[];
   id!: number;
   weekdays = [
-   "Sonntag", "Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"
+    "Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"
   ]
   SelectedWeekday: String = this.weekdays[this.getTodaysWeekday()];
 
@@ -32,22 +32,23 @@ export class ShoppingListComponent implements OnInit {
     });
 
   }
-  ShowIfEntryIsDone(a:any, id: any) {
-    if (a === false) {
-      document.getElementById("entryIsDone" + id)!.innerHTML = '<img style="width: 26px; float: right" class="img" src="/assets/red.png" alt="">'
+  ShowIfEntryIsDone(isDone: any, id: any) {
+    if (isDone === false) {
+      let isDoneImg = document.getElementById("entryIsDone" + id)!.innerHTML
+      isDoneImg = '<img style="width: 26px; float: right" class="img" src="/assets/red.png" alt="">'
+      return
     }
-    else {
-      document.getElementById("entryIsDone" + id)!.innerHTML = '<img style="width: 24px; float: right" class="img" src="/assets/green.png" alt="">'
-    }
+    let isDoneImg = document.getElementById("entryIsDone" + id)!.innerHTML
+    isDoneImg = '<img style="width: 24px; float: right" class="img" src="/assets/green.png" alt="">'
 
   }
   SetEntryToIsDone() {
     this.updateService.SetEntryToIsDone(this.id).subscribe();
     setTimeout(this.reload, 500
 
-      ) 
-  }  
-  reload(){
+    )
+  }
+  reload() {
     window.location.reload()
   }
 
@@ -60,15 +61,11 @@ export class ShoppingListComponent implements OnInit {
   deleteEntry() {
     this.deleteService.deleteEntry(this.id).subscribe();
     setTimeout(this.reload, 500
-
-      ) 
+    )
   }
-  getTodaysWeekday(){
-    var d=new Date();
-    console.log(d.getDay());
-    return d.getDay()
-    
+  getTodaysWeekday() {
+    var today = new Date();
+    console.log(today.getDay());
+    return today.getDay()
   }
-  
-
 }

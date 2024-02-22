@@ -19,9 +19,7 @@ export class AddProductComponent {
     this.shoppinglist.isDone= false
       console.log(this.shoppinglist)
     this.postService.postShoppinglistItem(this.shoppinglist).subscribe();
-    setTimeout(this.reload, 500
-
-      ) 
+    setTimeout(this.reload, 500) 
   }  
   reload(){
     window.location.reload()
