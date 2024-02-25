@@ -34,12 +34,13 @@ export class ShoppingListComponent implements OnInit {
   }
   ShowIfEntryIsDone(isDone: any, id: any) {
     if (isDone === false) {
-      let isDoneImg = document.getElementById("entryIsDone" + id)!.innerHTML
-      isDoneImg = '<img style="width: 26px; float: right" class="img" src="/assets/red.png" alt="">'
-      return
+      const isDoneImg = document.getElementById("entryIsDone" + id)
+      isDoneImg!.innerHTML = '<img style="width: 26px; float: right" class="img" src="/assets/red.png" alt="">'
+      return isDoneImg
     }
-    let isDoneImg = document.getElementById("entryIsDone" + id)!.innerHTML
-    isDoneImg = '<img style="width: 24px; float: right" class="img" src="/assets/green.png" alt="">'
+    const isDoneImg = document.getElementById("entryIsDone" + id)
+    isDoneImg!.innerHTML = '<img style="width: 24px; float: right" class="img" src="/assets/green.png" alt="">'
+    return isDoneImg
 
   }
   SetEntryToIsDone() {

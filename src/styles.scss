@@ -3,14 +3,24 @@
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-html{
-    margin-left: 20%;
-    margin-right: 20%;
+html,
+body {
+    height: 100%;
+}
+
+body {
+    min-width: 600px;
+    margin: 0;
     border-left: 1px solid yellow;
     border-right: 1px solid yellow;
-    background-color: rgba(255, 255, 0, 0.26);
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    
+}
+
+html {
+    margin-left: 20%;
+    margin-right: 20%;
+    
 
 
 }
